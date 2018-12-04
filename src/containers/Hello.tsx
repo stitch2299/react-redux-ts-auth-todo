@@ -1,3 +1,4 @@
+/*
 import Hello from '../components/Hello';
 import * as actions from '../actions/';
 import { StoreState } from '../types/index';
@@ -19,3 +20,4 @@ export function mapDispatchToProps(dispatch: Dispatch<actions.EnthusiasmAction>)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Hello);
+*/

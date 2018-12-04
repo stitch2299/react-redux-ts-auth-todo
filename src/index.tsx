@@ -1,18 +1,21 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import './index.css';
-import Hello from "./containers/Hello";
 import { createStore } from "redux";
-import { Provider } from 'react-redux';
-import { EnthusiasmAction } from "./actions/index";
-import { enthusiasm } from "./reducers/index";
+import './index.css';
+//import { Provider } from 'react-redux';
 import { StoreState } from "./types/index";
-const store = createStore<StoreState,EnthusiasmAction,any,any>(enthusiasm, {enthusiasmLevel: 1,languageName: 'TypeScript'});
+import { CountAction } from "./actions/index";
+import { reducer } from "./reducers/index";
+import Counter from "./components/Counter";
+
+const initialState ={
+  count: 0,
+  reseted: 0
+}
+const store = createStore<StoreState,CountAction,any,any>(reducer,initialState);
 console.log(store);
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Hello />
-  </Provider>,
+  <Counter count={100} />,
   document.getElementById('root') as HTMLElement
 );

@@ -1,13 +1,16 @@
-import { EnthusiasmAction } from "../actions";
+import { CountAction } from "../actions/index";
 import { StoreState } from "../types/index";
-import { INCREMENT_ENTHUSIASM, DECREMENT_ENTHUSIASM } from "../constants/index";
+import { ADD_COUNT, SUB_COUNT, DOUBLE_ADD_COUNT } from "../constants/index";
 
-export function enthusiasm(state: StoreState, action: EnthusiasmAction): StoreState {
+export const reducer = (state: StoreState, action: CountAction ): StoreState => {
   switch (action.type) {
-    case INCREMENT_ENTHUSIASM:
-      return { ...state, enthusiasmLevel: state.enthusiasmLevel + 1 };
-    case DECREMENT_ENTHUSIASM:
-      return { ...state, enthusiasmLevel: Math.max(1, state.enthusiasmLevel - 1) };
+    case ADD_COUNT:
+      return { ...state, count: state.count + 1 };
+    case SUB_COUNT:
+      return { ...state, count: state.count - 1 };
+    case DOUBLE_ADD_COUNT:
+      const num = action.payload.num;
+      return { ...state, count: state.count + num*2 };
   }
   return state;
 }
