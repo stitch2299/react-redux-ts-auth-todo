@@ -13,6 +13,7 @@ const initialState ={
   reseted: 0
 }
 const store = createStore<StoreState,CountAction,any,any>(reducer,initialState);
+console.log({store:store});
 
 ReactDOM.render(
   <Provider store={store}>
