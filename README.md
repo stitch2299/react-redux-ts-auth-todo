@@ -5,6 +5,9 @@
 * Presententional Component と Container Component を分けています。
 * Typescirpt 練習のため
 
+### demo
+https://yonedaco.github.io/react-redux-ts-counter/
+
 ### how to run
 ```
 cd react-redux-ts-counter
