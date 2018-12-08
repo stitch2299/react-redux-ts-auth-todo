@@ -4,7 +4,7 @@
 * React + Redux + Typescript でつくられたカウンターアプリ
 * Presententional Component と Container Component を分けています。
 * Typescirpt 練習のため
-
+
 ### how to run
 ```
 cd react-redux-ts-counter
