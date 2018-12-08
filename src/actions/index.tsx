@@ -1,37 +1,45 @@
 import * as constants from "../constants";
 
-// ADD_COUNTアクションの型定義
-// アクションは{type:-,payload:-}という形なのでその定義
 export interface TypeAddCount {
-  type: constants.TYPE_ADD_COUNT;
+  type: string;
 }
 
 export interface TypeSubCount {
-  type: constants.TYPE_SUB_COUNT;
+  type: string;
 }
 
 export interface TypeDoubleAddCount {
-  type: constants.TYPE_DOUBLE_ADD_COUNT;
+  type: string;
   payload: any;
 }
 
-export const getAddCount = () => {
+export interface TypeResetCount {
+  type: string;
+}
+
+export const getAddCount = ():TypeAddCount => {
   return{
     type: constants.ADD_COUNT
   }
 }
 
-export const getSubCount = () => {
+export const getSubCount = ():TypeSubCount => {
   return{
     type: constants.SUB_COUNT
   }
 }
 
-export const getDoubleAddCount = (num:number) => {
+export const getDoubleAddCount = (num:number):TypeDoubleAddCount => {
   return{
     type: constants.DOUBLE_ADD_COUNT,
     payload: {num:num}
   }
 }
 
-export type CountAction = TypeAddCount | TypeSubCount | TypeDoubleAddCount
+export const getResetCount = ():TypeResetCount => {
+  return{
+    type: constants.RESET_COUNT,
+  }
+}
+
+export type CountAction = TypeAddCount | TypeSubCount | TypeDoubleAddCount | TypeResetCount;
