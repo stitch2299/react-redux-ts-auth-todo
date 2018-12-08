@@ -3,7 +3,6 @@ import { StoreState } from "../types/index";
 import { ADD_COUNT, SUB_COUNT, DOUBLE_ADD_COUNT, RESET_COUNT} from "../constants/index";
 
 export const reducer = (state: StoreState, action: CountAction ): StoreState => {
-  console.log({state:state,action:action});
   switch (action.type) {
     case ADD_COUNT:
       return { ...state, count: state.count + 1 };
