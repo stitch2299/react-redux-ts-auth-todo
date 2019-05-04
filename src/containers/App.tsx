@@ -4,6 +4,7 @@ import AddButton from "../components/AddButton";
 import SubButton from "../components/SubButton";
 import DoubleAddButton from "../components/DoubleAddButton";
 import ResetButton from "../components/ResetButton";
+import Title from "../components/Title";
 import { StoreState } from '../types/index';
 import { connect } from 'react-redux';
 import { Dispatch } from  "redux";
@@ -21,6 +22,7 @@ export interface Props {
 const App = ( { count, reseted, addHandler, subHandler, doubleAddHandler, resetHandler }:Props) => {
   return(
     <div>
+      <Title text={"todoapp"} />
       <h2>counter app</h2>
       <Counter count={count} />
       <AddButton addHandler={addHandler} />
