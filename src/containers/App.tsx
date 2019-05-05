@@ -5,6 +5,7 @@ import SubButton from "../components/SubButton";
 import DoubleAddButton from "../components/DoubleAddButton";
 import ResetButton from "../components/ResetButton";
 import Title from "../components/Title";
+import Line from "../components/Line";
 import { StoreState } from '../types/index';
 import { connect } from 'react-redux';
 import { Dispatch } from  "redux";
@@ -23,7 +24,7 @@ const App = ( { count, reseted, addHandler, subHandler, doubleAddHandler, resetH
   return(
     <div>
       <Title text={"todoapp"} />
-      <h2>counter app</h2>
+      <Line />
       <Counter count={count} />
       <AddButton addHandler={addHandler} />
       <SubButton subHandler={subHandler} />
